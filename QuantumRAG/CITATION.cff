@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "QuantumRAG: controlled benchmark of quantum fidelity-based retrieval"
+authors:
+  - family-names: "M"
+    given-names: "Sudarsan"
+    email: "sudarsan.m0705@gmail.com"
+  - family-names: "M"
+    given-names: "Vanitha"
+    email: "mvanitha@vit.ac.in"
+license: MIT

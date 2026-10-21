@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.cache/
+.pytest_cache/
+.venv/
+venv/
+results/benchmark_2*.json
+results/study_data/
+models/

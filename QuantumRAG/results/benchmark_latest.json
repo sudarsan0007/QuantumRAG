@@ -1,0 +1,1375 @@
+{
+  "created": "2026-10-13T12:49:36+00:00",
+  "duration_s": 259.66083987699994,
+  "dataset": "SQuAD v1.1 dev (paragraph retrieval subset)",
+  "documents": 600,
+  "queries_evaluated": 300,
+  "seed": 42,
+  "candidates": 50,
+  "k_values": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "environment": {
+    "embedder": "Sentence-Transformers all-MiniLM-L6-v2 (384-d)",
+    "index": "numpy exact inner product",
+    "pennylane": "0.42.3",
+    "device": "default.qubit (simulator)",
+    "python": "3.11.15",
+    "machine": "x86_64",
+    "processor": "x86_64"
+  },
+  "runs": [
+    {
+      "label": "Classical (cosine, 384-d)",
+      "pipeline": "classical",
+      "config": null,
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.6933333333333334,
+        "recall@3": 0.88,
+        "recall@5": 0.9333333333333333,
+        "recall@10": 0.96,
+        "ndcg@1": 0.6933333333333334,
+        "ndcg@3": 0.802378237095241,
+        "ndcg@5": 0.8246172576785078,
+        "ndcg@10": 0.8336635695943411,
+        "mrr@10": 0.7920396825396826
+      },
+      "latency_ms": {
+        "mean": 0.062167386669216285,
+        "p50": 0.05309599998781778,
+        "p95": 0.10159255000417033
+      },
+      "memory": {
+        "index_bytes": 921600,
+        "peak_query_bytes": 15712,
+        "mean_query_bytes": 15711
+      },
+      "explained_variance": 1.0,
+      "build_ms": null,
+      "quantum_per_query": {},
+      "queries": 300
+    },
+    {
+      "label": "PCA cosine control, 4-d",
+      "pipeline": "pca_cosine",
+      "config": {
+        "n_qubits": 4,
+        "encoding": "angle",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.05333333333333334,
+        "recall@3": 0.18,
+        "recall@5": 0.22666666666666666,
+        "recall@10": 0.36666666666666664,
+        "ndcg@1": 0.05333333333333334,
+        "ndcg@3": 0.12495888439285899,
+        "ndcg@5": 0.14432672792230314,
+        "ndcg@10": 0.18966837942977258,
+        "mrr@10": 0.13569708994708998
+      },
+      "latency_ms": {
+        "mean": 0.37240681333704134,
+        "p50": 0.34500749995913793,
+        "p95": 0.5309279500124832
+      },
+      "memory": {
+        "index_bytes": 9600,
+        "peak_query_bytes": 15996,
+        "mean_query_bytes": 15846
+      },
+      "explained_variance": 0.133009135723114,
+      "build_ms": null,
+      "quantum_per_query": {},
+      "queries": 300
+    },
+    {
+      "label": "PCA cosine control, 8-d",
+      "pipeline": "pca_cosine",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "angle",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.21666666666666667,
+        "recall@3": 0.41,
+        "recall@5": 0.53,
+        "recall@10": 0.64,
+        "ndcg@1": 0.21666666666666667,
+        "ndcg@3": 0.32773560622619335,
+        "ndcg@5": 0.3769334473141322,
+        "ndcg@10": 0.41283721567296444,
+        "mrr@10": 0.3416164021164022
+      },
+      "latency_ms": {
+        "mean": 0.28637702000044857,
+        "p50": 0.25835750005853697,
+        "p95": 0.399406500054056
+      },
+      "memory": {
+        "index_bytes": 19200,
+        "peak_query_bytes": 16012,
+        "mean_query_bytes": 15830
+      },
+      "explained_variance": 0.23269206285476685,
+      "build_ms": null,
+      "quantum_per_query": {},
+      "queries": 300
+    },
+    {
+      "label": "PCA cosine control, 256-d",
+      "pipeline": "pca_cosine",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "amplitude",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.6966666666666667,
+        "recall@3": 0.8733333333333333,
+        "recall@5": 0.9333333333333333,
+        "recall@10": 0.96,
+        "ndcg@1": 0.6966666666666667,
+        "ndcg@3": 0.8002751379166695,
+        "ndcg@5": 0.8249470980453704,
+        "ndcg@10": 0.8340051639501808,
+        "mrr@10": 0.7926547619047619
+      },
+      "latency_ms": {
+        "mean": 0.3137920366725666,
+        "p50": 0.30934649998926034,
+        "p95": 0.371476700030371
+      },
+      "memory": {
+        "index_bytes": 614400,
+        "peak_query_bytes": 17004,
+        "mean_query_bytes": 16822
+      },
+      "explained_variance": 0.9899144172668457,
+      "build_ms": null,
+      "quantum_per_query": {},
+      "queries": 300
+    },
+    {
+      "label": "Quantum angle, 4q",
+      "pipeline": "quantum",
+      "config": {
+        "n_qubits": 4,
+        "encoding": "angle",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.07666666666666666,
+        "recall@3": 0.19333333333333333,
+        "recall@5": 0.24,
+        "recall@10": 0.33666666666666667,
+        "ndcg@1": 0.07666666666666666,
+        "ndcg@3": 0.1446015152619069,
+        "ndcg@5": 0.16440759629973958,
+        "ndcg@10": 0.19612814562957298,
+        "mrr@10": 0.15246560846560853
+      },
+      "latency_ms": {
+        "mean": 13.401820733335702,
+        "p50": 12.332793499979289,
+        "p95": 18.76779155000463
+      },
+      "memory": {
+        "index_bytes": 163200,
+        "peak_query_bytes": 196210,
+        "mean_query_bytes": 191306
+      },
+      "explained_variance": 0.133009135723114,
+      "build_ms": 56.172235999952136,
+      "quantum_per_query": {
+        "circuits_executed": 600.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 4.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Quantum angle, 8q",
+      "pipeline": "quantum",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "angle",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.18666666666666668,
+        "recall@3": 0.3933333333333333,
+        "recall@5": 0.4666666666666667,
+        "recall@10": 0.59,
+        "ndcg@1": 0.18666666666666668,
+        "ndcg@3": 0.30614800294047945,
+        "ndcg@5": 0.33685447551575104,
+        "ndcg@10": 0.3776779053166614,
+        "mrr@10": 0.3108399470899471
+      },
+      "latency_ms": {
+        "mean": 23.81075119000381,
+        "p50": 21.995709500004068,
+        "p95": 32.43981534992599
+      },
+      "memory": {
+        "index_bytes": 2476800,
+        "peak_query_bytes": 2517872,
+        "mean_query_bytes": 2517494
+      },
+      "explained_variance": 0.23269206285476685,
+      "build_ms": 284.9991450000289,
+      "quantum_per_query": {
+        "circuits_executed": 600.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 8.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Quantum IQP, 4q",
+      "pipeline": "quantum",
+      "config": {
+        "n_qubits": 4,
+        "encoding": "iqp",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.08333333333333333,
+        "recall@3": 0.17666666666666667,
+        "recall@5": 0.24,
+        "recall@10": 0.3466666666666667,
+        "ndcg@1": 0.08333333333333333,
+        "ndcg@3": 0.1387286502380972,
+        "ndcg@5": 0.16483619889370937,
+        "ndcg@10": 0.19933641699035137,
+        "mrr@10": 0.15431084656084662
+      },
+      "latency_ms": {
+        "mean": 8.237934116665807,
+        "p50": 7.569772500005456,
+        "p95": 10.977712350057802
+      },
+      "memory": {
+        "index_bytes": 163200,
+        "peak_query_bytes": 183906,
+        "mean_query_bytes": 183542
+      },
+      "explained_variance": 0.133009135723114,
+      "build_ms": 72.64324000004763,
+      "quantum_per_query": {
+        "circuits_executed": 600.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 4.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Quantum IQP, 8q",
+      "pipeline": "quantum",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "iqp",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.18,
+        "recall@3": 0.3566666666666667,
+        "recall@5": 0.42333333333333334,
+        "recall@10": 0.5733333333333334,
+        "ndcg@1": 0.18,
+        "ndcg@3": 0.28186274120238375,
+        "ndcg@5": 0.3092597992154444,
+        "ndcg@10": 0.3580605555579567,
+        "mrr@10": 0.2916058201058202
+      },
+      "latency_ms": {
+        "mean": 15.51228788666966,
+        "p50": 14.624439999977312,
+        "p95": 21.07835209999394
+      },
+      "memory": {
+        "index_bytes": 2476800,
+        "peak_query_bytes": 2507725,
+        "mean_query_bytes": 2507241
+      },
+      "explained_variance": 0.23269206285476685,
+      "build_ms": 358.2450720000452,
+      "quantum_per_query": {
+        "circuits_executed": 600.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 8.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Quantum amplitude, 4q",
+      "pipeline": "quantum",
+      "config": {
+        "n_qubits": 4,
+        "encoding": "amplitude",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.33666666666666667,
+        "recall@3": 0.56,
+        "recall@5": 0.69,
+        "recall@10": 0.79,
+        "ndcg@1": 0.33666666666666667,
+        "ndcg@3": 0.4679727963690515,
+        "ndcg@5": 0.5220617197155755,
+        "ndcg@10": 0.554504270675028,
+        "mrr@10": 0.4799007936507937
+      },
+      "latency_ms": {
+        "mean": 3.042276923336734,
+        "p50": 2.764838000018699,
+        "p95": 3.9047184500532244
+      },
+      "memory": {
+        "index_bytes": 192000,
+        "peak_query_bytes": 171448,
+        "mean_query_bytes": 170960
+      },
+      "explained_variance": 0.3767545223236084,
+      "build_ms": 53.50179799995658,
+      "quantum_per_query": {
+        "circuits_executed": 600.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 4.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Quantum amplitude, 6q",
+      "pipeline": "quantum",
+      "config": {
+        "n_qubits": 6,
+        "encoding": "amplitude",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.59,
+        "recall@3": 0.79,
+        "recall@5": 0.8666666666666667,
+        "recall@10": 0.93,
+        "ndcg@1": 0.59,
+        "ndcg@3": 0.706584435452384,
+        "ndcg@5": 0.7379961007072531,
+        "ndcg@10": 0.7583639460847542,
+        "mrr@10": 0.7034312169312171
+      },
+      "latency_ms": {
+        "mean": 3.03305944333412,
+        "p50": 2.7597379999519944,
+        "p95": 3.997126350037662
+      },
+      "memory": {
+        "index_bytes": 768000,
+        "peak_query_bytes": 633341,
+        "mean_query_bytes": 633085
+      },
+      "explained_variance": 0.7390463948249817,
+      "build_ms": 133.4173650000139,
+      "quantum_per_query": {
+        "circuits_executed": 600.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 6.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Quantum amplitude, 8q",
+      "pipeline": "quantum",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "amplitude",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": null,
+      "metrics": {
+        "recall@1": 0.6933333333333334,
+        "recall@3": 0.8733333333333333,
+        "recall@5": 0.9333333333333333,
+        "recall@10": 0.96,
+        "ndcg@1": 0.6933333333333334,
+        "ndcg@3": 0.7990449037619077,
+        "ndcg@5": 0.8237168638906085,
+        "ndcg@10": 0.8327749297954189,
+        "mrr@10": 0.7909880952380952
+      },
+      "latency_ms": {
+        "mean": 3.5749472599968612,
+        "p50": 3.2489659999441756,
+        "p95": 4.964061100025675
+      },
+      "memory": {
+        "index_bytes": 3072000,
+        "peak_query_bytes": 2481844,
+        "mean_query_bytes": 2481651
+      },
+      "explained_variance": 0.9899144172668457,
+      "build_ms": 155.54173599991827,
+      "quantum_per_query": {
+        "circuits_executed": 600.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 8.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Hybrid angle, 8q",
+      "pipeline": "hybrid",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "angle",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": 50,
+      "metrics": {
+        "recall@1": 0.21,
+        "recall@3": 0.45,
+        "recall@5": 0.5433333333333333,
+        "recall@10": 0.7166666666666667,
+        "ndcg@1": 0.21,
+        "ndcg@3": 0.34702086796428905,
+        "ndcg@5": 0.38619479253156563,
+        "ndcg@10": 0.44173951441925063,
+        "mrr@10": 0.3564656084656084
+      },
+      "latency_ms": {
+        "mean": 28.945601240000844,
+        "p50": 23.609262499974193,
+        "p95": 51.638464799935946
+      },
+      "memory": {
+        "index_bytes": 3398400,
+        "peak_query_bytes": 464015,
+        "mean_query_bytes": 463508
+      },
+      "explained_variance": 0.23269206285476685,
+      "build_ms": 0.00987199996416166,
+      "quantum_per_query": {
+        "circuits_executed": 50.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 8.0,
+        "candidates": 50.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Hybrid angle 8q, fusion 0.5",
+      "pipeline": "hybrid",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "angle",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.5,
+        "seed": 42
+      },
+      "candidates": 50,
+      "metrics": {
+        "recall@1": 0.4,
+        "recall@3": 0.62,
+        "recall@5": 0.7266666666666667,
+        "recall@10": 0.8833333333333333,
+        "ndcg@1": 0.4,
+        "ndcg@3": 0.5257115704285744,
+        "ndcg@5": 0.5694592157477937,
+        "ndcg@10": 0.6198779929343511,
+        "mrr@10": 0.53814417989418
+      },
+      "latency_ms": {
+        "mean": 22.772179203334797,
+        "p50": 21.125827999981084,
+        "p95": 29.75272425002231
+      },
+      "memory": {
+        "index_bytes": 3398400,
+        "peak_query_bytes": 463840,
+        "mean_query_bytes": 463248
+      },
+      "explained_variance": 0.23269206285476685,
+      "build_ms": 0.015076999943630653,
+      "quantum_per_query": {
+        "circuits_executed": 50.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 8.0,
+        "candidates": 50.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Hybrid IQP, 8q",
+      "pipeline": "hybrid",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "iqp",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": 50,
+      "metrics": {
+        "recall@1": 0.20666666666666667,
+        "recall@3": 0.4166666666666667,
+        "recall@5": 0.5066666666666667,
+        "recall@10": 0.6766666666666666,
+        "ndcg@1": 0.20666666666666667,
+        "ndcg@3": 0.32563250704762187,
+        "ndcg@5": 0.36278652641013603,
+        "ndcg@10": 0.4187994266630349,
+        "mrr@10": 0.3388558201058201
+      },
+      "latency_ms": {
+        "mean": 16.226231959999495,
+        "p50": 14.825957999960337,
+        "p95": 23.384061549978696
+      },
+      "memory": {
+        "index_bytes": 3398400,
+        "peak_query_bytes": 453338,
+        "mean_query_bytes": 452902
+      },
+      "explained_variance": 0.23269206285476685,
+      "build_ms": 0.010803999998643121,
+      "quantum_per_query": {
+        "circuits_executed": 50.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 8.0,
+        "candidates": 50.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Hybrid amplitude, 8q",
+      "pipeline": "hybrid",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "amplitude",
+        "method": "kernel",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": 50,
+      "metrics": {
+        "recall@1": 0.6966666666666667,
+        "recall@3": 0.8733333333333333,
+        "recall@5": 0.9333333333333333,
+        "recall@10": 0.96,
+        "ndcg@1": 0.6966666666666667,
+        "ndcg@3": 0.8002751379166695,
+        "ndcg@5": 0.8249470980453704,
+        "ndcg@10": 0.8340051639501808,
+        "mrr@10": 0.7926547619047619
+      },
+      "latency_ms": {
+        "mean": 3.243042909999758,
+        "p50": 2.9601409999600037,
+        "p95": 4.057527149927864
+      },
+      "memory": {
+        "index_bytes": 3993600,
+        "peak_query_bytes": 477546,
+        "mean_query_bytes": 477275
+      },
+      "explained_variance": 0.9899144172668457,
+      "build_ms": 0.011639000035756908,
+      "quantum_per_query": {
+        "circuits_executed": 50.0,
+        "shots_used": 0.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 8.0,
+        "candidates": 50.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Hybrid amplitude 8q, SWAP 1024 shots",
+      "pipeline": "hybrid",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "amplitude",
+        "method": "swap",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": 1024,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": 50,
+      "metrics": {
+        "recall@1": 0.66,
+        "recall@3": 0.86,
+        "recall@5": 0.92,
+        "recall@10": 0.9566666666666667,
+        "ndcg@1": 0.66,
+        "ndcg@3": 0.7770208679642888,
+        "ndcg@5": 0.8019849864319155,
+        "ndcg@10": 0.8137186537530002,
+        "mrr@10": 0.7671005291005293
+      },
+      "latency_ms": {
+        "mean": 3.246482493336392,
+        "p50": 3.0387379999865516,
+        "p95": 4.1478378500130475
+      },
+      "memory": {
+        "index_bytes": 3993600,
+        "peak_query_bytes": 477518,
+        "mean_query_bytes": 477276
+      },
+      "explained_variance": 0.9899144172668457,
+      "build_ms": 0.007569999979750719,
+      "quantum_per_query": {
+        "circuits_executed": 50.0,
+        "shots_used": 51200.0,
+        "oracle_queries": 0.0,
+        "qubits_per_circuit": 17.0,
+        "candidates": 50.0
+      },
+      "queries": 300
+    },
+    {
+      "label": "Hybrid amplitude 8q, IQAE eps 0.01",
+      "pipeline": "hybrid",
+      "config": {
+        "n_qubits": 8,
+        "encoding": "amplitude",
+        "method": "iqae",
+        "layers": 2,
+        "bandwidth": 1.0,
+        "shots": null,
+        "execution": "statevector",
+        "iqae_epsilon": 0.01,
+        "iqae_alpha": 0.05,
+        "iqae_shots": 100,
+        "fusion": 0.0,
+        "seed": 42
+      },
+      "candidates": 50,
+      "metrics": {
+        "recall@1": 0.6966666666666667,
+        "recall@3": 0.8733333333333333,
+        "recall@5": 0.9333333333333333,
+        "recall@10": 0.96,
+        "ndcg@1": 0.6966666666666667,
+        "ndcg@3": 0.8002751379166695,
+        "ndcg@5": 0.8250931772148332,
+        "ndcg@10": 0.834210804641469,
+        "mrr@10": 0.7928809523809524
+      },
+      "latency_ms": {
+        "mean": 37.34101603333405,
+        "p50": 34.28303999993432,
+        "p95": 54.8600204500417
+      },
+      "memory": {
+        "index_bytes": 3993600,
+        "peak_query_bytes": 477522,
+        "mean_query_bytes": 477295
+      },
+      "explained_variance": 0.9899144172668457,
+      "build_ms": 0.008406000006289105,
+      "quantum_per_query": {
+        "circuits_executed": 50.0,
+        "shots_used": 24699.333333333332,
+        "oracle_queries": 131245.66666666666,
+        "qubits_per_circuit": 8.0,
+        "candidates": 50.0
+      },
+      "queries": 300
+    }
+  ],
+  "analysis": {
+    "explained_variance": [
+      {
+        "dim": 2,
+        "explained_variance": 0.07263968139886856
+      },
+      {
+        "dim": 4,
+        "explained_variance": 0.133009135723114
+      },
+      {
+        "dim": 6,
+        "explained_variance": 0.1859271228313446
+      },
+      {
+        "dim": 8,
+        "explained_variance": 0.23269206285476685
+      },
+      {
+        "dim": 10,
+        "explained_variance": 0.2748625874519348
+      },
+      {
+        "dim": 16,
+        "explained_variance": 0.376754492521286
+      },
+      {
+        "dim": 32,
+        "explained_variance": 0.5579454898834229
+      },
+      {
+        "dim": 64,
+        "explained_variance": 0.7390464544296265
+      },
+      {
+        "dim": 128,
+        "explained_variance": 0.8955649137496948
+      },
+      {
+        "dim": 256,
+        "explained_variance": 0.9899145364761353
+      }
+    ],
+    "kernel_concentration": [
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 2,
+        "bandwidth": 2.0,
+        "mean": 0.3791017939726206,
+        "variance": 0.06148543444488409
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 2,
+        "bandwidth": 1.0,
+        "mean": 0.44101229134097325,
+        "variance": 0.07692870789133541
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 2,
+        "bandwidth": 0.5,
+        "mean": 0.6277815868666913,
+        "variance": 0.06823759353448097
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 4,
+        "bandwidth": 2.0,
+        "mean": 0.09556013990339167,
+        "variance": 0.012506573056682001
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 4,
+        "bandwidth": 1.0,
+        "mean": 0.16648737791084536,
+        "variance": 0.03794513154736539
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 4,
+        "bandwidth": 0.5,
+        "mean": 0.438728868865555,
+        "variance": 0.06041301270769822
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 6,
+        "bandwidth": 2.0,
+        "mean": 0.0280615359353326,
+        "variance": 0.0027526464270543924
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 6,
+        "bandwidth": 1.0,
+        "mean": 0.06842710547896964,
+        "variance": 0.013893601443007473
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 6,
+        "bandwidth": 0.5,
+        "mean": 0.2811434275101266,
+        "variance": 0.044869856031162815
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 8,
+        "bandwidth": 2.0,
+        "mean": 0.00877222726372511,
+        "variance": 0.000721057320129742
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 8,
+        "bandwidth": 1.0,
+        "mean": 0.026657105891398105,
+        "variance": 0.005329911913976888
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 8,
+        "bandwidth": 0.5,
+        "mean": 0.16448872278637816,
+        "variance": 0.027335781319388915
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 12,
+        "bandwidth": 2.0,
+        "mean": 0.001129122677366154,
+        "variance": 5.890918708423463e-05
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 12,
+        "bandwidth": 1.0,
+        "mean": 0.007154682841390123,
+        "variance": 0.0016159865358462823
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 12,
+        "bandwidth": 0.5,
+        "mean": 0.07592594386176041,
+        "variance": 0.012665033054016296
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 16,
+        "bandwidth": 2.0,
+        "mean": 0.00021176920644169832,
+        "variance": 1.1212950469389575e-05
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 16,
+        "bandwidth": 1.0,
+        "mean": 0.0025734479173394912,
+        "variance": 0.000603940756372961
+      },
+      {
+        "source": "corpus",
+        "encoding": "angle",
+        "n_qubits": 16,
+        "bandwidth": 0.5,
+        "mean": 0.034082583080005516,
+        "variance": 0.006005117252332316
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 2,
+        "bandwidth": 2.0,
+        "mean": 0.34925779290093667,
+        "variance": 0.07639079671175661
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 2,
+        "bandwidth": 1.0,
+        "mean": 0.5939380001103916,
+        "variance": 0.07847583997884029
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 2,
+        "bandwidth": 0.5,
+        "mean": 0.8136185873601807,
+        "variance": 0.022283190073493355
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 4,
+        "bandwidth": 2.0,
+        "mean": 0.09313008070459991,
+        "variance": 0.012784163054685644
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 4,
+        "bandwidth": 1.0,
+        "mean": 0.20153553460777057,
+        "variance": 0.041115627730520396
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 4,
+        "bandwidth": 0.5,
+        "mean": 0.5433015415118116,
+        "variance": 0.04538998354316732
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 6,
+        "bandwidth": 2.0,
+        "mean": 0.030579850243754585,
+        "variance": 0.003049178577545021
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 6,
+        "bandwidth": 1.0,
+        "mean": 0.09506536296999835,
+        "variance": 0.01883103295050126
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 6,
+        "bandwidth": 0.5,
+        "mean": 0.43919210457596913,
+        "variance": 0.03507887379814917
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 8,
+        "bandwidth": 2.0,
+        "mean": 0.009791371263886657,
+        "variance": 0.0008656932614939081
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 8,
+        "bandwidth": 1.0,
+        "mean": 0.042945478551955775,
+        "variance": 0.007452624650310765
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 8,
+        "bandwidth": 0.5,
+        "mean": 0.3119185572868735,
+        "variance": 0.028306415357730052
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 12,
+        "bandwidth": 2.0,
+        "mean": 0.0012411925112330378,
+        "variance": 0.00011672397954367069
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 12,
+        "bandwidth": 1.0,
+        "mean": 0.013352586205700831,
+        "variance": 0.002335859840192558
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 12,
+        "bandwidth": 0.5,
+        "mean": 0.19108659768154926,
+        "variance": 0.01873644512180082
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 16,
+        "bandwidth": 2.0,
+        "mean": 0.0002465411195825102,
+        "variance": 2.6242910622163575e-05
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 16,
+        "bandwidth": 1.0,
+        "mean": 0.004818928506141604,
+        "variance": 0.0009910876436996772
+      },
+      {
+        "source": "corpus",
+        "encoding": "iqp",
+        "n_qubits": 16,
+        "bandwidth": 0.5,
+        "mean": 0.11101715655580731,
+        "variance": 0.010792843119936906
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 2,
+        "bandwidth": 2.0,
+        "mean": 0.32522740478417805,
+        "variance": 0.06330499097180248
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 2,
+        "bandwidth": 1.0,
+        "mean": 0.4477770177387647,
+        "variance": 0.079080585435973
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 2,
+        "bandwidth": 0.5,
+        "mean": 0.7246817081774954,
+        "variance": 0.032924946709003616
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 4,
+        "bandwidth": 2.0,
+        "mean": 0.08860754641480185,
+        "variance": 0.009319535220956852
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 4,
+        "bandwidth": 1.0,
+        "mean": 0.12614745599142904,
+        "variance": 0.020523317905781057
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 4,
+        "bandwidth": 0.5,
+        "mean": 0.43560908756868927,
+        "variance": 0.03959216705530024
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 6,
+        "bandwidth": 2.0,
+        "mean": 0.022758177106067874,
+        "variance": 0.0009384343994235094
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 6,
+        "bandwidth": 1.0,
+        "mean": 0.04365490151897592,
+        "variance": 0.0050660414378811604
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 6,
+        "bandwidth": 0.5,
+        "mean": 0.28726291628216816,
+        "variance": 0.028930352681869023
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 8,
+        "bandwidth": 2.0,
+        "mean": 0.007201505771485924,
+        "variance": 0.00015261968585762996
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 8,
+        "bandwidth": 1.0,
+        "mean": 0.017119740443803363,
+        "variance": 0.0012102876985973239
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 8,
+        "bandwidth": 0.5,
+        "mean": 0.18885432133548638,
+        "variance": 0.017358685882408388
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 12,
+        "bandwidth": 2.0,
+        "mean": 0.0005399536799953158,
+        "variance": 2.0127569392753706e-06
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 12,
+        "bandwidth": 1.0,
+        "mean": 0.002108798360359222,
+        "variance": 4.582029036010307e-05
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 12,
+        "bandwidth": 0.5,
+        "mean": 0.08785599226580314,
+        "variance": 0.006208476026653959
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 16,
+        "bandwidth": 2.0,
+        "mean": 5.629142792254813e-05,
+        "variance": 6.479119690645235e-08
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 16,
+        "bandwidth": 1.0,
+        "mean": 0.0003291779132012692,
+        "variance": 3.0625880794166248e-06
+      },
+      {
+        "source": "random",
+        "encoding": "iqp",
+        "n_qubits": 16,
+        "bandwidth": 0.5,
+        "mean": 0.043464621896052755,
+        "variance": 0.001972362564538284
+      }
+    ],
+    "estimator_efficiency": {
+      "sampling": [
+        {
+          "oracle_calls": 32,
+          "mean_abs_error": 0.04805735824117365
+        },
+        {
+          "oracle_calls": 100,
+          "mean_abs_error": 0.029124850037520782
+        },
+        {
+          "oracle_calls": 316,
+          "mean_abs_error": 0.01642967052005884
+        },
+        {
+          "oracle_calls": 1000,
+          "mean_abs_error": 0.010979009983209808
+        },
+        {
+          "oracle_calls": 3162,
+          "mean_abs_error": 0.0068892206445774805
+        },
+        {
+          "oracle_calls": 10000,
+          "mean_abs_error": 0.0035029936610986336
+        },
+        {
+          "oracle_calls": 31623,
+          "mean_abs_error": 0.0019457264341363341
+        }
+      ],
+      "iqae": [
+        {
+          "epsilon": 0.05,
+          "oracle_calls": 1122.5,
+          "mean_abs_error": 0.006538256797549663
+        },
+        {
+          "epsilon": 0.02,
+          "oracle_calls": 2832.5,
+          "mean_abs_error": 0.0020909210133173
+        },
+        {
+          "epsilon": 0.01,
+          "oracle_calls": 5562.5,
+          "mean_abs_error": 0.0011041856995124247
+        },
+        {
+          "epsilon": 0.005,
+          "oracle_calls": 11877.5,
+          "mean_abs_error": 0.0005136918247401978
+        },
+        {
+          "epsilon": 0.002,
+          "oracle_calls": 27182.5,
+          "mean_abs_error": 0.0002379103955561169
+        },
+        {
+          "epsilon": 0.001,
+          "oracle_calls": 57702.5,
+          "mean_abs_error": 0.00013803771690516602
+        }
+      ],
+      "trials": 40
+    }
+  }
+}
