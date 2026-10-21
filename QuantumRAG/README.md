@@ -1,6 +1,6 @@
 # QuantumRAG: Quantum Similarity Search for Retrieval-Augmented Generation
 
-MCA Dissertation (PAAML698), VIT School of Computer Science Engineering and Information Systems.
+Msc ai&ml Dissertation (PAAML698), VIT School of Computer Science Engineering and Information Systems.
 Sudarsan M (25MAG0139), guided by Dr. Vanitha M.
 
 QuantumRAG replaces or augments the retrieval stage of a RAG system with quantum similarity
